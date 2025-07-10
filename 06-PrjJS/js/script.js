@@ -111,7 +111,16 @@ function addInCarrello(viaggio){
         body: JSON.stringify(viaggio)
     })
     .then(data => {
-        console.log(data);
+        document.querySelector("#mainCont").innerHTML = 
+        `<div class="d-flex justify-content-center mt-5"> 
+            <div class="spinner-border" role="status">
+            </div>
+        </div>`;
+
+        setTimeout(() =>{
+            console.log(data);
+            location.href = "http://127.0.0.1:5501/06-PrjJS/carrello.html";
+        }, 2000);
     })
 }
 
